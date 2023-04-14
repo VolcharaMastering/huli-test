@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
@@ -7,7 +8,7 @@ const errorHandler = require('./middlewares/errorHandler');
 const NotFound = require('./errors/notFound');
 
 const app = express();
-const port = 3000;
+const { PORT = 3000, NODE_ENV } = process.env;
 
 app.use(cors());
 app.use(express.json());
@@ -24,6 +25,6 @@ app.use('*', (req, res, next) => {
 app.use(errors());
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`)
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`)
 });
