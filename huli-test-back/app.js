@@ -1,9 +1,9 @@
 require('dotenv').config();
-const express = require('express');
-const { errors } = require('celebrate');
-const helmet = require('helmet');
-const cors = require('cors');
-const rateLimit = require('./utils/rateLimit');
+const express = require('express'); // this is express
+const { errors } = require('celebrate'); //this is ma validation library
+const helmet = require('helmet'); //this is my security library. defending from CSRF, MIME sniffing, XSS and so on.
+const cors = require('cors'); // cross-domain security. Here it is off
+const rateLimit = require('./utils/rateLimit'); // limit of requests to API. Say no to DDos
 const errorHandler = require('./middlewares/errorHandler');
 const NotFound = require('./errors/notFound');
 
