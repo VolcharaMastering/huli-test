@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch, useLocation, useHistory } from "react-router-dom";
-import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes, useLocation, useHistory } from "react-router-dom";
+// import { Provider } from 'react-redux';
 import "../../index.css";
 import "./App.css";
-import store from './store';
+// import store from '../../store/index';
+import Main from '../Main/Main';
+import Charts from '../Charts/Charts';
+import Login from '../Login/Login';
+import Header from '../Header/Header';
+import NotFound from '../NotFound/NotFound';
 
 function App() {
 
     return (
-        <main className='main'>
+        <div className='page'>
             <Header />
-            <Switch>
-                <Route path="/">
-                    <Main />
-                </Route>
-                <Route path="/charts">
-                    <Charts />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/*">
-                    <NotFound makeMark={makeMark} />
-                </Route>
-            </Switch>
-        </main>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/charts" element={<Charts />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/*" element={<NotFound />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
     )
 }
 

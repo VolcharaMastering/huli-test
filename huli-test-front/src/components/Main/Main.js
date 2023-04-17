@@ -2,8 +2,10 @@ import React from 'react'
 
 function Main() {
   return (
-    <div>Main</div>
+    <main>
+
+    </main>
   )
 }
 
-export default Main
+export default Main;
