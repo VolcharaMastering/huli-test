@@ -12,9 +12,7 @@
     height: 39px;
     margin: 0;
 }
-.header__navigation{
 
-}
 .header__nav-bar{
     list-style: none;
     font-size: 16px;
@@ -27,8 +25,14 @@
 .header__nav-link{
     flex-grow: 1;
     color: black;
+    transition: opacity 0.5s linear;
     text-decoration: none;
 }
+.header__nav-link:hover{
+  opacity: 60%;
+  cursor: pointer;
+}
+
 .header__button{
  width: 87px;
  height: 48px;
@@ -37,8 +41,14 @@
  display: flex;
  align-items: center;
  justify-content: center;
+ transition: opacity 0.5s linear;
  cursor: pointer;
 }
+.header__button:hover{
+  opacity: 60%;
+  cursor: pointer;
+}
+
 .header__button-label{
  color: #4F46E5;
  font-size: 16px;
