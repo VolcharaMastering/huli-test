@@ -1,7 +1,18 @@
-
 .page {
-    width: 69%;
-    min-height: 100vh;
-    margin: 0;
+  width: 69%;
+  /* height: 100%; */
+  background-image: url('../../images/rolls.svg');
+  background-size: cover;
+  background-position: top;
+  margin: 0;
+}
+
+.page__charts-back {
+  background-position: center;
+}
+
+@media screen and (max-width: 1750px) {
+  .page {
+    width: 86%;
   }
-  
+}
