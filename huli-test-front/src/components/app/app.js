@@ -13,17 +13,17 @@ import NotFound from '../NotFound/NotFound';
 function App() {
 
     return (
-        <div className='page'>
-            <Header />
-            <BrowserRouter>
+        <BrowserRouter>
+            <div className='page'>
+                {/* <Header /> */}
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/charts" element={<Charts />} />
-                    <Route path="/login" element={<Login />} />
                     <Route path="/*" element={<NotFound />} />
+                    <Route path="/signin" element={<Login />} />
                 </Routes>
-            </BrowserRouter>
-        </div>
+            </div>
+        </BrowserRouter>
     )
 }
 

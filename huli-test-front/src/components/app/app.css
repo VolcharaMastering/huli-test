@@ -3,7 +3,9 @@
   /* height: 100%; */
   margin: 0;
 }
-
+.page__login{
+  width: 100%;
+}
 .page__charts-back {
   background-position: center;
 }
@@ -73,4 +75,13 @@
     font-size: 25px;
     line-height: 35px;
   }
+}
+
+.logo{
+  width: 199px;
+  height: 39px;
+  margin: 0;
+}
+.logo_signin-margin{
+  width: 160px;
 }
