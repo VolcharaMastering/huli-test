@@ -1,0 +1,112 @@
+.signin__form {
+    width: 47%;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 4px;
+}
+@media screen and (max-width: 1500px){
+    .signin__form{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 980px){
+    .signin__form{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 730px){
+    .signin__form{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 400px){
+    .signin__form{
+        width: 100%;
+    }
+}
+
+.signin__greeting {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 73px;
+    margin-bottom: 0;
+}
+
+.signin__input-box {
+    position: relative;
+    width: 100%;
+}
+
+.signin__input {
+    width: 98%;
+    background-color: #E4E4E7;
+    height: 44px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.signin__input:last-of-type {
+    margin-top: 22px;
+}
+
+.signin__hide {
+    border: none;
+    background-image: url(../../images/Eye-on.svg);
+    border-radius: 50%;
+    position: absolute;
+    top: 74%;
+    right: 5%;
+    width: 23px;
+    height: 24px;
+    transition: opacity 0.5s linear;
+}
+
+.signin__hide:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+.signin__compare-message {
+    font-size: 12px;
+    color: red;
+}
+
+.signin__button {
+    width: 100%;
+    height: 48px;
+    margin-top: 68px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #4F46E5;
+    transition: opacity 0.5s linear;
+}
+.signin__button:hover{
+  opacity: 60%;
+  cursor: pointer;
+}
+
+
+.signin__label {
+    font-size: 16px;
+    width: 103%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    top: 105%;
+    left: -3%;
+}
+
+.signin__label-checkbox:last-of-type {
+    color: #4F46E5;
+    margin-top: 10px;
+}
+
+.signin__checkbox {
+    width: 48px;
+    height: 25px;
+}

@@ -8,7 +8,7 @@ const errorHandler = require('./middlewares/errorHandler');
 const NotFound = require('./errors/notFound');
 
 const app = express();
-const { PORT = 3000, NODE_ENV } = process.env;
+const { PORT = 3013, NODE_ENV } = process.env;
 
 app.use(cors());
 app.use(express.json());
