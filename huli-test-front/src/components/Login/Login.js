@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { setUser } from '../../store/slices/loginSlice';
 import { authorize } from '../../utils/Api.js'
@@ -18,12 +18,12 @@ function Login() {
   const handleLogin = (email, password) => {
     authorize({email, password})
       .then((res) => {
-        localStorage.setItem("jwt", res.token);
         dispatch(setUser({
-          email: res.email,
-          name: res.name,
+          email: res.data.email,
+          name: res.data.email,
           token: res.token,
         }));
+        localStorage.setItem("jwt", res.token);
         setMessage("Вы успешно авторизировались!");
       })
       .catch((err) => {
@@ -49,7 +49,7 @@ function Login() {
       </div>
     </section>
   ) : (
-    <redirect to="/" />
+    <Navigate to="/" />
   )
 }
 

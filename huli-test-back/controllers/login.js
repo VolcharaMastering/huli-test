@@ -29,4 +29,19 @@ const login = async (req, res, next) => {
     }
 };
 
-module.exports = { login };
+const aboutMe = async (req, res, next) => {
+    const myEmail = req.user.email;
+    console.log(myEmail)
+    try {
+      const me = await mockUser.email === myEmail ? mockUser : undefined;;
+      if (!me) {
+        next(new NotFound('Такого пользователя нет'));
+        return;
+      }
+      res.status(OK_CODE).send(me);
+    } catch (e) {
+      next(new ServerError('Произошла ошибка на сервере'));
+    }
+  };
+
+module.exports = { login, aboutMe };

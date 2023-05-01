@@ -19,17 +19,13 @@ const authorize = (data) => {
 }
 
 const authByToken = (token) => {
-  return fetch(URL_CONFIG.url + "users/me", {
+  return fetch(URL_CONFIG.url + "signin", {
     method: "GET",
-    headers: URL_CONFIG.headers,
+    headers: {
+      ...URL_CONFIG.headers,
+    Authorization: `Bearer ${token}`},
   })
     .then(checkResponse);
 }
 
-const getData = () => {
-  return fetch(URL_CONFIG.url + "users/me", {
-    headers: URL_CONFIG.headers,
-  }).then(checkResponse);
-}
-
-export { authorize, authByToken, getData };
+export { authorize, authByToken };

@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useAuth } from '../../hooks/useAuth';
 import logo from '../../images/Logo.svg';
 import userIcon from '../../images/user.svg';
+import { authByToken } from '../../utils/Api.js'
+import { setUser } from '../../store/slices/loginSlice';
 import "./Header.css";
 
 function Header() {
   const dispatch = useDispatch();
-  const { isAuth, email, name } = useAuth();
+  const { isAuth, email, userName } = useAuth();
   const { pathname } = useLocation();
-
-
+  const tokenCheck = () => {
+      const jwt = localStorage.getItem("jwt");
+      if (!jwt) {
+        return;
+      }
+      authByToken(jwt)
+        .then((res) => {
+          dispatch(setUser({
+              email: res.email,
+              name: res.userName,
+              token: jwt,
+            }));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+ useEffect(() =>{
+  tokenCheck();
+ },[isAuth]);
   return (
     <header className='header'>
       <img className='logo' src={logo} alt="logo" />
@@ -44,7 +64,7 @@ function Header() {
             type="button"
           // onClick={handleEye}
           >
-            <p className='header__user-name'>${name}</p>
+            <p className='header__user-name'>{userName}</p>
             <img className='header__user_icon' src={userIcon} alt="user icon" />
           </button>
           :
