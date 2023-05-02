@@ -27,5 +27,12 @@ const authByToken = (token) => {
   })
     .then(checkResponse);
 }
-
-export { authorize, authByToken };
+const getCalls = (data) => {
+  return fetch(URL_CONFIG.url + "charts", {
+    method: "GET",
+    headers: URL_CONFIG.headers,
+    body: data,
+  })
+    .then(checkResponse);
+}
+export { authorize, authByToken, getCalls };

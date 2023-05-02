@@ -60,6 +60,7 @@
 
 .charts__lineChart {
     width: 100%;
+    position: relative;
     box-sizing: border-box;
     margin: 70px 0 0;
 }
@@ -67,6 +68,24 @@
     .charts__lineChart {
         margin: 10px 0;
     }
+  }
+
+  .charts__date{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('../../images/choose-date.png');
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    transition: opacity 0.5s linear;
+    border: none;
+    z-index: 1;
+  }
+  .charts__date:hover{
+    opacity: 60%;
+    cursor: pointer;
   }
 
 .image {
